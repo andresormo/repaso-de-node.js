@@ -1,0 +1,28 @@
+{
+  "name": "curso-node",
+  "version": "1.0.0",
+  "description": "el-mejor-curso",
+  "main": "1.os-info.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andresormo/repaso-de-node.js.git"
+  },
+  "author": "Andrés Orozco",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andresormo/repaso-de-node.js/issues"
+  },
+  "homepage": "https://github.com/andresormo/repaso-de-node.js#readme",
+  "dependencies": {
+    "picocolors": "1.0.0"
+  },
+  "devDependencies": {
+    "semistandard": "^17.0.0"
+  },
+  "eslintConfig": {
+    "extends": "semistandard"
+  }
+}
