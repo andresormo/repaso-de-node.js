@@ -8,9 +8,8 @@ const PORT = process.env.PORT ?? 2000;
 // disable, para desahabilitar en este caso la cabecera donde muestra el framework
 app.disable('x-powered-by');
 
+// TODO ESTO SE SIMPLIFICA CON EXPRESS CON UNA FUNCION;
 app.use(express.json());
-
-// TODO ESTO SE SIMPLIFICA CON NODE.js CON UNA FUNCION;
 // app.use((req, res, next) => {
 //   if (req.method !== 'POST') return next();
 //   if (req.headers['content-type'] !== 'application/json') return next();
