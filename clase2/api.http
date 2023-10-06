@@ -6,7 +6,7 @@ Content-Type: application/json
 
 {
     "name": "andres",
-    "type": "normal",
+    "type": "normaliyo es",
     "clases":[
         {
             "transforma":"bicis"
