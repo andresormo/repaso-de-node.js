@@ -1,0 +1,15 @@
+GET http://localhost:2000/pokemon/ditto
+
+###
+POST http://localhost:2000/pokemon
+Content-Type: application/json
+
+{
+    "name": "andres",
+    "type": "normal",
+    "clases":[
+        {
+            "transforma":"bicis"
+        }
+    ]
+}
