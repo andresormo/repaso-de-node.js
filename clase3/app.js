@@ -146,7 +146,7 @@ app.delete('/movies/:id', (req,res) => {
 //     res.send(200)
 // });
 
-const port = process.env.PORT ?? 3030;
+const port = process.env.PUERTO ?? 3030;
 
 app.listen(port, () =>{
     console.log(`Servidor escuchando en puerto http://localhost:${port}`);
