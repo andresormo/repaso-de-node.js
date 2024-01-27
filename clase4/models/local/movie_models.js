@@ -1,4 +1,6 @@
 import { readJson } from "../../utils.js";
+
+// Creador de ID desde nuestra app
 import { randomUUID } from 'node:crypto';
 
 const movies = readJson('./movies.json')
@@ -18,9 +20,10 @@ export class MovieModels{
         return movie;
     };
 
+
     static async create( {input} ){
         const newMovie = {
-            id: randomUUID(),
+            id: randomUUID(), 
             ...input
            };
            movies.push(newMovie);

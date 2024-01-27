@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { validateMovie, validateMoviePartial } from './../schemas/moviesSchema.js';
-import { MovieModels } from "../models/local/movie.js";
-import { MovieController } from "../controller/movies.js";
+import { MovieModels } from "../models/local/movie_models.js";
+import { MovieController } from "../controller/movies_controller.js";
 
 export const moviesRouter = Router();
 
