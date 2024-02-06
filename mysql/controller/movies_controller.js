@@ -1,18 +1,19 @@
 import { MovieModel } from "../models/mongodb/movie.js";
 import { MovieModels } from "../models/local/movie_models.js";
 import { validateMovie, validateMoviePartial } from "../schemas/moviesSchema.js";
+import { MovieModelSql } from "../models/mysql/movies_models_sql.js";
 
 
 export class MovieController {
     static async getAll ( req, res ){
         const { genre } = req.query;
-        const movies = await MovieModels.getAll({genre});
+        const movies = await MovieModelSql.getAll({genre});
         res.json(movies);
     }
 
     static async getById ( req, res ){
         const { id } = req.params;
-    const movie = await MovieModels.getById({ id });
+    const movie = await MovieModelSql.getById({ id });
     res.json(movie);
     }
 
@@ -23,7 +24,7 @@ export class MovieController {
          return res.status(400).json({error: JSON.parse(result.error.message)});
         }
      
-        const newMovie = await MovieModels.create({input: result.data})
+        const newMovie = await MovieModelSql.create({input: result.data})
         return res.status(201).json(newMovie);
      
      }
@@ -37,7 +38,7 @@ export class MovieController {
     
          const { id } = req.params;
          
-         const updateMovie = await MovieModels.update({id: id, input: result.data})
+         const updateMovie = await MovieModelSql.update({id: id, input: result.data})
         return res.json(updateMovie);
     
     }
@@ -45,7 +46,7 @@ export class MovieController {
     static async delete (req,res) {
         const {id} = req.params;
     
-       const result = await MovieModels.delete({id})
+       const result = await MovieModelSql.delete({id})
     
        if( result === false){
         return res.status(404).json({message : 'Movie not found'})
