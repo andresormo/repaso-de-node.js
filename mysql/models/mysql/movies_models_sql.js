@@ -37,7 +37,7 @@ export class MovieModelSql {
     // get the id from the first genre result
 
     const [{genre_id}] = genres;
-
+console.log('hola');
     const [result] = await connection.query(
         "SELECT title, year, director, duration, poster, rate, BIN_TO_UUID(id) id FROM movie JOIN movie_genre ON movie.id = movie_genre.movie_id WHERE movie_genre.genre_id = ?;",
         genre_id

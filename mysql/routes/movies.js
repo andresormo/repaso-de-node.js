@@ -1,18 +1,25 @@
 import { Router } from "express";
-import { validateMovie, validateMoviePartial } from './../schemas/moviesSchema.js';
-import { MovieModels } from "../models/local/movie_models.js";
 import { MovieController } from "../controller/movies_controller.js";
 
-export const moviesRouter = Router();
+// creo una función pasandole como parametro el movieModel que a su vez lo paso al 
+// new MovieController como parametro ya que tambien es una función que hemos creado en el modulo de
+// movies_controller
+export const createMovieRouter = ({movieModel})=>{
+    const moviesRouter = Router();
 
+    const movieController = new MovieController({movieModel});
 
-moviesRouter.get('/', MovieController.getAll);
+    moviesRouter.get('/', movieController.getAll);
+    
+    moviesRouter.get('/:id', movieController.getById);
+    
+    moviesRouter.post('/', movieController.create);
+    
+     moviesRouter.patch('/:id', movieController.update);
+    
+    moviesRouter.delete('/:id', movieController.delete);
 
-moviesRouter.get('/:id', MovieController.getById);
+    return moviesRouter;
+}
 
-moviesRouter.post('/', MovieController.create);
-
- moviesRouter.patch('/:id', MovieController.update);
-
-moviesRouter.delete('/:id', MovieController.delete);
 
