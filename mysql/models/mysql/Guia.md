@@ -13,3 +13,6 @@ una vez instalado en la terminal ponemos: pscale auth login
 y nos redirigirá a una pagina para confirmar el password
 
 A continuacion en la base de datos que creamos en planetscale le damos a conectar e introducimos el comando que nos aparece en la terminal y ya podemos agregar los comandos sql para crear , ver actualizar y eliminar tablas y datos de esta.
+
+
+Tiene cierta limitaciones como que no permite la creacion de claves foraneas y esto me causa errores en mi app,
