@@ -9,7 +9,7 @@ dotenv.config();
 // creamos un objeto config para la conexion con la ddbb
 
 
-const config = {
+const DEFAULT_CONFIG = {
 host: 'localhost',
 user:'root',
 port:3306,
@@ -17,7 +17,9 @@ password: process.env.PASSWORD,
 database:'moviesbd',
 }
 
-const connection = await mysql.createConnection(config);
+const connectionString = process.env.DATABASE_URL ?? DEFAULT_CONFIG;
+
+const connection = await mysql.createConnection(connectionString);
 
 
 
